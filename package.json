@@ -1,0 +1,9 @@
+{
+  "name": "gold-today",
+  "version": "1.0.0",
+  "description": "أسعار الذهب المباشرة - الذهب اليوم",
+  "private": true,
+  "dependencies": {
+    "marked": "^12.0.0"
+  }
+}

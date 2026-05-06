@@ -1,0 +1,21 @@
+{
+  "name": "الذهب اليوم",
+  "short_name": "الذهب اليوم",
+  "description": "أسعار الذهب والفضة والبلاتين مباشرة - مصر والخليج",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0e0a",
+  "theme_color": "#D4AF37",
+  "lang": "ar",
+  "dir": "rtl",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "48x48", "type": "image/x-icon" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" }
+  ],
+  "categories": ["finance", "utilities"],
+  "screenshots": [
+    { "src": "/og-image.png", "sizes": "1200x630", "type": "image/png", "label": "الذهب اليوم - الشاشة الرئيسية" }
+  ]
+}
