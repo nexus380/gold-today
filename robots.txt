@@ -1,0 +1,36 @@
+# robots.txt — alzahabalyoum.com
+# Updated: 2026-05-15
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /netlify/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow social crawlers full access
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+# Sitemap
+Sitemap: https://alzahabalyoum.com/sitemap.xml

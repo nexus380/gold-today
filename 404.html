@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N5PXZ76R');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>404 — الصفحة غير موجودة | الذهب اليوم</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #F0D060;
+      --gold-dim: #8B6914;
+      --bg-deep: #060608;
+      --border: rgba(212,175,55,0.15);
+      --text-main: #F0EAD6;
+      --text-muted: #8a8070;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    /* Background orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    .orb-1 { width: 500px; height: 500px; background: var(--gold); top: -150px; right: -100px; }
+    .orb-2 { width: 350px; height: 350px; background: #8B6914; bottom: -80px; left: -80px; }
+
+    /* 404 number */
+    .error-number {
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 900;
+      font-size: clamp(6rem, 20vw, 10rem);
+      line-height: 1;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dim));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Gold bar decoration */
+    .gold-bar {
+      width: 120px;
+      height: 8px;
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold-light), var(--gold-dim));
+      border-radius: 4px;
+      margin: 0 auto 32px;
+    }
+
+    .error-title {
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+
+    .error-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 400px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    /* Buttons */
+    .btn-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      border-radius: 12px;
+      color: #000;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 900;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      background: rgba(212,175,55,0.08);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--gold);
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(212,175,55,0.15); border-color: rgba(212,175,55,0.4); }
+
+    /* Quick links */
+    .quick-links {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      width: 100%;
+      max-width: 500px;
+    }
+    .quick-links p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .links-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .links-row a {
+      font-size: 0.82rem;
+      color: var(--gold);
+      text-decoration: none;
+      padding: 5px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .links-row a:hover { background: rgba(212,175,55,0.1); }
+
+    /* Gold coin animation */
+    .coin {
+      font-size: 4rem;
+      margin-bottom: 16px;
+      animation: coinBounce 2s ease-in-out infinite;
+      display: block;
+    }
+    @keyframes coinBounce {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(8deg); }
+    }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DMN5NNKYN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3DMN5NNKYN', {
+      page_title: document.title,
+      page_location: window.location.href,
+      anonymize_ip: true,
+      send_page_view: true
+    });
+    // Custom events helpers
+    function gaEvent(action, category, label, value) {
+      gtag('event', action, { event_category: category, event_label: label, value: value });
+    }
+  </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5PXZ76R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <span class="coin">🪙</span>
+  <div class="error-number">404</div>
+  <div class="gold-bar"></div>
+
+  <h1 class="error-title">عذراً، هذه الصفحة غير موجودة</h1>
+  <p class="error-desc">
+    يبدو أن الصفحة التي تبحث عنها قد نُقلت أو حُذفت أو لم تكن موجودة من الأساس.
+  </p>
+
+  <div class="btn-group">
+    <a href="/" class="btn-primary">🏠 العودة للرئيسية</a>
+    <a href="/blog/" class="btn-secondary">📰 أخبار الذهب</a>
+  </div>
+
+  <div class="quick-links">
+    <p>أو اذهب مباشرة إلى:</p>
+    <div class="links-row">
+      <a href="/">الأسعار المباشرة</a>
+      <a href="/blog/">المقالات</a>
+      <a href="/pages/about.html">من نحن</a>
+      <a href="/pages/contact.html">اتصل بنا</a>
+    </div>
+  </div>
+</body>
+</html>

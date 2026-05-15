@@ -1,0 +1,133 @@
+[build]
+  functions = "netlify/functions"
+  publish   = "."
+
+# ===== Canonical domain: force non-www HTTPS =====
+# Fixes "Page with redirect" issues in Google Search Console
+
+[[redirects]]
+  from   = "https://www.alzahabalyoum.com/*"
+  to     = "https://alzahabalyoum.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "http://alzahabalyoum.com/*"
+  to     = "https://alzahabalyoum.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "http://www.alzahabalyoum.com/*"
+  to     = "https://alzahabalyoum.com/:splat"
+  status = 301
+  force  = true
+
+# ===== Fix known redirect chains =====
+[[redirects]]
+  from   = "/blog"
+  to     = "/blog/"
+  status = 301
+
+[[redirects]]
+  from   = "/pages/about"
+  to     = "/pages/about.html"
+  status = 301
+
+[[redirects]]
+  from   = "/pages/contact"
+  to     = "/pages/contact.html"
+  status = 301
+
+[[redirects]]
+  from   = "/pages/privacy"
+  to     = "/pages/privacy.html"
+  status = 301
+
+[[redirects]]
+  from   = "/pages/terms"
+  to     = "/pages/terms.html"
+  status = 301
+
+# ===== 404 fallback =====
+[[redirects]]
+  from   = "/*"
+  to     = "/404.html"
+  status = 404
+
+# ===== Security headers (all pages) =====
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection       = "1; mode=block"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "camera=(), microphone=(), geolocation=()"
+    # Allow iframes from Facebook/WhatsApp crawlers (needed for og:image scraping)
+    X-Frame-Options        = "SAMEORIGIN"
+
+# ===== og-image — no cache, always fresh, public =====
+[[headers]]
+  for = "/og-image.png"
+  [headers.values]
+    Cache-Control                   = "public, max-age=0, must-revalidate"
+    Access-Control-Allow-Origin     = "*"
+    Content-Type                    = "image/png"
+
+# ===== Service Worker — must NOT be cached =====
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Content-Type  = "application/javascript"
+
+# ===== PWA manifest =====
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Type  = "application/manifest+json"
+
+# ===== Static assets — long cache =====
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ===== Images =====
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# ===== HTML — short cache =====
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# ===== Sitemap & robots =====
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

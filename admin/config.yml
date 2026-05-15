@@ -1,0 +1,76 @@
+backend:
+  name: git-gateway
+  repo: nexus380/gold-today
+  branch: main
+
+media_folder: "images/blog"
+public_folder: "/images/blog"
+
+locale: ar
+
+collections:
+  - name: "blog"
+    label: "📝 المقالات"
+    label_singular: "مقال"
+    folder: "blog/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "frontmatter"
+    editor:
+      preview: false
+    fields:
+      - label: "عنوان المقال"
+        name: "title"
+        widget: "string"
+        hint: "مثال: سعر الذهب اليوم في مصر — مايو 2026"
+
+      - label: "وصف المقال (للـ SEO)"
+        name: "description"
+        widget: "text"
+        hint: "جملة أو جملتين — تظهر في جوجل تحت العنوان (160 حرف كحد أقصى)"
+
+      - label: "التصنيف"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "أسعار محلية", value: "أسعار محلية" }
+          - { label: "تحليل", value: "تحليل" }
+          - { label: "توقعات", value: "توقعات" }
+          - { label: "تعليم", value: "تعليم" }
+          - { label: "أخبار", value: "أخبار" }
+        default: "أسعار محلية"
+
+      - label: "وقت القراءة"
+        name: "readtime"
+        widget: "string"
+        default: "3 دقائق للقراءة"
+        hint: "مثال: 5 دقائق للقراءة"
+
+      - label: "تاريخ النشر"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DDTHH:mm:ssZ"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm"
+        default: ""
+
+      - label: "صورة المقال (اختيارية)"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "مقاس مناسب: 1200×630 بكسل"
+
+      - label: "محتوى المقال"
+        name: "body"
+        widget: "markdown"
+        hint: "اكتب المحتوى هنا — يمكنك استخدام العناوين والقوائم والجداول"
+        buttons:
+          - bold
+          - italic
+          - heading-two
+          - heading-three
+          - bulleted-list
+          - numbered-list
+          - link
+          - quote
